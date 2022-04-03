@@ -41,6 +41,8 @@ public class App {
     }
 
     public static void main( String[] args ) throws IOException {
+        Logger.getGlobal().warning(System.getProperty("telegram"));
+
         TablesResponse tables = null;
         try {
             tables = client.getTables();

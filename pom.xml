@@ -6,7 +6,7 @@
 
   <groupId>ru.elerphore</groupId>
   <artifactId>schedule</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
 
   <name>schedule</name>
   <!-- FIXME change it to the project's website -->
@@ -31,20 +31,20 @@
       <version>5.0.1</version>
     </dependency>
     <!-- Parses JSON responses, in case your chosen client doesn't do that -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.12.6.1</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--      <artifactId>jackson-databind</artifactId>-->
+<!--      <version>2.13.2.2</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
       <artifactId>jackson-datatype-jsr310</artifactId>
-      <version>2.9.8</version>
+      <version>2.13.2</version>
     </dependency>
     <dependency>
       <groupId>org.mongodb</groupId>
       <artifactId>mongodb-driver-sync</artifactId>
-      <version>4.0.5</version>
+      <version>4.5.1</version>
     </dependency>
   </dependencies>
 

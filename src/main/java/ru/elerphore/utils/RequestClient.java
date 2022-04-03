@@ -13,6 +13,7 @@ import ru.elerphore.data.TablesResponse;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.logging.Logger;
 
 public class RequestClient {
     private static final ObjectMapper mapper = new ObjectMapper();
@@ -33,7 +34,7 @@ public class RequestClient {
 
     public void telegramRequest(Day day) throws IOException {
         try(CloseableHttpClient client = HttpClients.createDefault()) {
-            HttpPost request = new HttpPost(System.getenv("TG_URI"));
+            HttpPost request = new HttpPost(System.getProperty("telegram"));
             request.addHeader("Content-Type", "application/json");
             request.addHeader("Accept", "application/json");
             String json = "{\"text\":" + "\"" + day.toString() + "\"";
@@ -45,7 +46,8 @@ public class RequestClient {
 
     public void telegramErrorRequest() throws IOException {
         try(CloseableHttpClient client = HttpClients.createDefault()) {
-            HttpPost request = new HttpPost(System.getenv("TG_URI"));
+            Logger.getGlobal().warning(System.getenv("telegram"));
+            HttpPost request = new HttpPost(System.getProperty("telegram"));
             request.addHeader("Content-Type", "application/json");
             request.addHeader("Accept", "application/json");
             String json = "{\"text\": \"Cannot parse the data\"";
